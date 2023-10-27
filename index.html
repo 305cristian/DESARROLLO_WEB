@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web de Tareas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
        
         body {
@@ -42,6 +43,13 @@
             text-align: center;
         }
 
+        .card:hover{
+            transform: scale(1.1);
+            transition: transform 0.3s;
+            background-color: #dfdfdf;
+        }
+   
+
        
         .card a {
             text-decoration: none;
@@ -63,6 +71,13 @@
         .deshabilitado a{
             color: #a4a0a0;
         }
+        .arrow-up {
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent; 
+            border-right: 10px solid transparent; 
+            border-bottom: 20px solid #007bff; 
+        }
 
     </style>
 </head>
@@ -76,14 +91,14 @@
         <div class="card">
             <h2>CLASE PRÁCTICA 1</h2>
             <p>Hoja de vida y Sitio de ua empresa</p>
-            <a href="cp1/index.html">Ver detalles</a>
+            <a href="cp1/index.html"><span class="fas fa-arrow-right"></span> Ver detalles</a>
         </div>
 
       
         <div class="card">
             <h2>TAREA 1</h2>
             <p>Se realiza cada uno de los ejercicios planteados.</p>
-            <a href="t1/index.html" target="_blank">Ver detalles</a>
+            <a href="t1/index.html" target="_blank"><span class="fas fa-arrow-right"></span> Ver detalles</a>
         </div>
 
         <div class="card deshabilitado">
