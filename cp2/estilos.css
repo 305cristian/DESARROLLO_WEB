@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #dadada;
+    margin: 0;
+}
+
+.carousel-container {
+    background-color: antiquewhite;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.container-title {
+    background-color: antiquewhite;
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.container-title h1 {
+    font-family: cursive;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide img {
+    max-width: 100%;
+    max-height: 400px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.btn:hover{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    color: black;
+}
+.btn:active{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: black;
+}
+
+#prevBtn {
+    left: 10px;
+}
+
+#nextBtn {
+    right: 10px;
+}
+
+.carousel-puntos {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.punto {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #888;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.punto.active {
+    background: #333;
+}
+.punto:hover {
+    background: #333;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
