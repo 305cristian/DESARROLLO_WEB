@@ -2,14 +2,44 @@
 <html>
 <head>
 	<meta charset="utf-8">
-    <title>Ejercicios</title>
+    <title>Lista de Tareas Interactiva</title>
 	<link rel="stylesheet" type="text/css" href="estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+    <style>
+        .task-list {
+            margin-top: 20px;
+        }
+        .task {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px 0;
+        }
+        .task input {
+            flex: 1;
+        }
+    </style>
 </head>
 <body>
     
     <div class="container">
         <section>
             <h2>Lista de Tareas Interactiva</h2>
+            <br>
+            <div class="container">
+                <h1 class="title">Usando BULMA</h1>
+                <div class="field has-addons">
+                    <div class="control is-expanded">
+                        <input id="task-input" class="input" type="text" placeholder="Ingrese una Nueva Tarea">
+                    </div>
+                    <div class="control">
+                        <a id="add-task" class="button is-primary">ADD</a>
+                    </div>
+                </div>
+                <div class="task-list">
+                    <!-- TAREAS...cc -->
+                </div>
+            </div>
         </section>
        
     </div>
@@ -20,3 +50,30 @@
     </footer>
     
 </body>
+
+<script>
+    function addTarea() {
+        const taskInput = document.getElementById('task-input');
+        const taskText = taskInput.value.trim();
+        if (taskText === '') return;
+
+        const taskList = document.querySelector('.task-list');
+        const taskItem = document.createElement('div');
+        taskItem.classList.add('task');
+        taskItem.innerHTML = `
+            <input class="input is-static" type="text" value="${taskText}">
+            <a class="button is-danger is-small">Delete</a>
+        `;
+
+        const deleteButton = taskItem.querySelector('.button');
+        deleteButton.addEventListener('click', () => {
+            taskList.removeChild(taskItem);
+        });
+
+        taskList.appendChild(taskItem);
+        taskInput.value = '';
+    }
+
+    const addTaskButton = document.getElementById('add-task');
+    addTaskButton.addEventListener('click', addTarea);
+</script>

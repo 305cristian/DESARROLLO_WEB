@@ -2,14 +2,72 @@
 <html>
 <head>
 	<meta charset="utf-8">
-    <title>Ejercicios</title>
+    <title>Menú de Navegación Desplegable</title>
 	<link rel="stylesheet" type="text/css" href="estilos.css">
+
+    <style>
+        ul {
+            list-style: none;
+            padding: 0;
+            background-color: #333;
+        }
+        
+        li {
+            display: inline-block;
+            position: relative;
+        }
+
+        li a {
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        li:hover {
+            background-color: #555;
+        }
+
+        ul ul {
+            display: none;
+            position: absolute;
+            background-color: #444;
+        }
+
+        ul li:hover ul {
+            display: block;
+        }
+
+        ul ul li {
+            display: block;
+        }
+    </style>
 </head>
 <body>
     
     <div class="container">
         <section>
             <h2>Menú de Navegación Desplegable</h2>
+
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li>
+                    <a href="#">Productos</a>
+                    <ul>
+                        <li><a href="#">Arroz</a></li>
+                        <li><a href="#">Aceite</a></li>
+                        <li><a href="#">Yuca</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Servicios</a>
+                    <ul>
+                        <li><a href="#">Sistema ERP</a></li>
+                        <li><a href="#">Sistema Biometrico</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
         </section>
        
     </div>
@@ -20,3 +78,13 @@
     </footer>
     
 </body>
+
+<script>
+    const menuItems = document.querySelectorAll('li');
+
+    menuItems.forEach(item => {
+        item.addEventListener('click', () => {
+            item.querySelector('ul').classList.toggle('show');
+        });
+    });
+</script>

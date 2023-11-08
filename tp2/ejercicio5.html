@@ -2,14 +2,38 @@
 <html>
 <head>
 	<meta charset="utf-8">
-    <title>Ejercicios</title>
-	<link rel="stylesheet" type="text/css" href="estilos.css">
+    <title>Validación de Formulario</title>
+    <link rel="stylesheet" type="text/css" href="estilos.css">
+   
+    <style>
+        .text-control{
+        padding: 5px;
+        font-size: 12px;
+        border-radius: 5px;
+        border-color: aliceblue;
+        height: 20px;
+    }
+
+    </style>
 </head>
 <body>
     
     <div class="container">
         <section>
             <h2>Validación de Formulario</h2>
+
+            <form onsubmit="return validarFormulario();" action="procesar_.php" method="post">
+                <label>Nombre:
+                <input class="text-control" type="text" id="nombre" name="nombre" ></label><br><br>
+        
+                <label >Correo Electrónico:
+                <input class="text-control" type="email" id="email" name="email" ></label><br><br>
+        
+                <label >Contraseña:
+                <input class="text-control" type="password" id="contraseña" name="contraseña" ></label><br><br>
+        
+                <input class="btn" type="submit" value="Registrarse">
+            </form>
         </section>
        
     </div>
@@ -20,3 +44,25 @@
     </footer>
     
 </body>
+
+<script>
+    function validarFormulario() {
+        var nombre = document.getElementById('nombre').value;
+        var email = document.getElementById('email').value;
+        var contraseña = document.getElementById('contraseña').value;
+
+        if (nombre === "") {
+            alert("Por favor, complete el campo nombre es obliogatorio.");
+            return false;
+        }
+        if (email === "" ) {
+            alert("Por favor, complete el campo email es oblogatorio");
+            return false;
+        }
+        if (contraseña === "") {
+            alert("Por favor, El campo contraseña no puede estar vacio");
+            return false;
+        }
+        return true;
+    }
+</script>

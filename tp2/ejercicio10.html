@@ -2,14 +2,91 @@
 <html>
 <head>
 	<meta charset="utf-8">
-    <title>Ejercicios</title>
+    <title>Juego de Preguntas y Respuestas</title>
 	<link rel="stylesheet" type="text/css" href="estilos.css">
+    <style>
+    
+    
+        .pregunta {
+          
+          padding: 3px;
+          margin: 3px;
+          text-align: left;
+          display: grid;
+        }
+    
+        .pregunta p {
+          font-weight: bold;
+          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+    
+        input[type="radio"] {
+          margin-right: 5px;
+         
+        }
+        label{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 15px;
+            padding: 5px;
+        }
+    
+        button {
+          background-color: #3498db;
+          color: #fff;
+          border: none;
+          padding: 10px 20px;
+          margin: 10px;
+          cursor: pointer;
+        }
+    
+        button:hover {
+          background-color: #2980b9;
+        }
+    
+        #resultado {
+          font-weight: bold;
+          margin: 10px;
+        }
+        .panel{
+            display: grid;
+            justify-content: left;
+        }
+        .separador{
+            border: 1px solid #d4d2d2;
+        }
+      </style>
 </head>
 <body>
     
     <div class="container">
         <section>
             <h2>Juego de Preguntas y Respuestas</h2>
+
+            <div class="panel">
+                <div class="pregunta">
+                    <p>Pregunta 1: ¿Cuál es la capital de Francia?</p>
+                    <label><input type="radio" name="pregunta1" value="a">a) Londres</label>
+                    <label><input type="radio" name="pregunta1" value="b"> b) París</label>
+                    <label><input type="radio" name="pregunta1" value="c"> c) Berlín</label>
+                </div>
+                <div class="separador"></div>
+                <div class="pregunta">
+                    <p>Pregunta 2: ¿Cuál es el planeta más grande del sistema solar?</p>
+                     <label><input type="radio" name="pregunta2" value="a"> a) Marte</label>
+                     <label><input type="radio" name="pregunta2" value="b"> b) La Tierra</label>
+                     <label><input type="radio" name="pregunta2" value="c"> c) Júpiter</label>
+                </div>
+                <div class="separador"></div>
+                <div class="pregunta">
+                    <p>Pregunta 3: ¿Cuál es el río más largo del mundo?</p>
+                     <label><input type="radio" name="pregunta3" value="a"> a) El Nilo</label>
+                     <label><input type="radio" name="pregunta3" value="b"> b) El Amazonas</label>
+                     <label><input type="radio" name="pregunta3" value="c">c) El Mississippi</label>
+                </div>
+            </div>
+              <button onclick="calcularPuntuacion()">Enviar</button>
+              
+              <div id="resultado"></div>
         </section>
        
     </div>
@@ -20,3 +97,28 @@
     </footer>
     
 </body>
+
+<script>
+
+    function calcularPuntuacion() {
+       let puntuacion = 0;
+      const respuestas = {
+        pregunta1: "b",
+        pregunta2: "c",
+        pregunta3: "a"
+      };
+
+      for (let i = 1; i <= 3; i++) {
+        const respuestaUsuario = document.querySelector(`input[name="pregunta${i}"]:checked`);
+        if (respuestaUsuario) {
+          if (respuestaUsuario.value === respuestas[`pregunta${i}`]) {
+            puntuacion++;
+          }
+        }
+      }
+
+      
+      const resultado = document.getElementById("resultado");
+      resultado.innerHTML = `Puntuación: ${puntuacion} / 3`;
+    }
+  </script>
