@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <title>Ejercicios</title>
+	<link rel="stylesheet" type="text/css" href="estilos.css">
+    <style>
+
+
+.menu {
+    background-color: #3d2b2b;
+    padding: 10px;
+}
+
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    display: inline-block;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: #555;
+    padding: 10px;
+}
+
+.submenu li {
+    display: block;
+    color: white;
+    padding: 5px;
+    cursor: pointer;
+}
+.submenu li:hover {
+    display: block;
+    color: rgb(12, 12, 12);
+    padding: 5px;
+    cursor: pointer;
+    background-color: rgb(97, 145, 129);
+}
+a{
+    color: aliceblue;
+    text-decoration: none;
+}
+ 
+    </style>
+
+</head>
+<body>
+    
+    <div class="container">
+        <section>
+            <h2>Menú desplegable</h2>
+            <nav class="menu">
+                <ul>
+                    <li id="opcion1"><a href="#">Home</a></li>
+                    <li id="opcion2">Compras
+                        <ul class="submenu" id="submenu2">
+                            <li><a href="#">Crear Compras</a></li>
+                            <li><a href="#">Listar Compras</a></li>
+                            <li><a href="#">Reportes</a></li>
+                        </ul>
+                    </li>
+                    <li id="opcion3"> <a href="#">Ventas</a></li>
+                </ul>
+            </nav>
+    </section>
+       
+       
+    </div>
+    
+   
+    <footer>
+        <p>Copyright © 2023 CCorp. All rights reserved. Teléfono: 0992094788 | Correo electrónico: pcris.994@cc.com</p>
+    </footer>
+    
+</body>
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function () {
+   
+    var menuItems = document.querySelectorAll('.menu li');
+
+   
+    menuItems.forEach(function (menuItem) {
+        menuItem.addEventListener('click', function () {
+         
+            document.querySelectorAll('.submenu').forEach(function (submenu) {
+                submenu.style.display = 'none';
+            });
+
+          
+            var submenuId = menuItem.getAttribute('id');
+            var submenu = document.getElementById('submenu' + submenuId.substring(submenuId.length - 1));
+            if (submenu) {
+                submenu.style.display = 'block';
+            }
+        });
+    });
+});
+
+</script>

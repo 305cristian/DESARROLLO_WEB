@@ -1,0 +1,133 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 80%;
+  max-width: 600px;
+  box-sizing: border-box;
+  margin: auto;
+}
+
+h1 {
+  color: #007bff;
+  text-align: center;
+}
+
+.comment {
+  margin-bottom: 15px;
+  padding: 15px;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  background-color: #f5f5f5;
+}
+
+.comment strong {
+  color: #007bff;
+}
+
+.comment p {
+  margin: 0;
+  color: #495057;
+}
+
+.comment-footer {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #868e96;
+}
+
+.comment-footer span {
+  font-size: 12px;
+}
+
+.comment-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.comment-actions a {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.topic-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.topic-content {
+  color: #495057;
+  line-height: 1.6;
+}
+.comment-form {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  background-color: #f5f5f5;
+}
+
+.comment-form label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.comment-form textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ced4da;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+.comment-form input {
+  padding: 5px;
+  border-color: #fdfdfd;
+  border-radius: 5px;
+}
+.comment-form input:active {
+  padding: 5px;
+  border-color: #fdfdfd;
+  border-radius: 5px;
+}
+
+.comment-form button {
+  background-color: #007bff;
+  color: #ffffff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.comment-form button:hover {
+  background-color: #5e7a97;
+  color: #ffffff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    width: 95%;
+  }
+}

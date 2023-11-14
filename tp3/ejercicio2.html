@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <title>Ejercicios</title>
+	<link rel="stylesheet" type="text/css" href="estilos.css">
+    <style>
+
+
+form {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 5%;
+    
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <section>
+            <h2>Formulario de Contacto</h2>
+            
+            <form  id="miFormulario" action="#" method="post">
+                <label >Nombre:  <input type="text" id="nombre" name="nombre" required></label>
+
+                <label >Correo Electrónico: <input type="email" id="email" name="email" required></label>
+
+                <label >Mensaje:  <textarea id="mensaje" name="mensaje" required></textarea></label>
+               
+            
+                <button type="button" onclick="validarFormulario()">Enviar</button>
+            </form>
+
+        </section>
+      
+    </div>
+    
+   
+    <footer>
+        <p>Copyright © 2023 CCorp. All rights reserved. Teléfono: 0992094788 | Correo electrónico: pcris.994@cc.com</p>
+    </footer>
+    
+</body>
+</html>
+<script>
+
+function validarFormulario() {
+    var nombre = document.getElementById('nombre').value;
+    var email = document.getElementById('email').value;
+    var mensaje = document.getElementById('mensaje').value;
+
+    if (nombre === '' || email === '' || mensaje === '') {
+        alert('Por favor, completa todos los campos.');
+    } else {
+        if(!email.includes('@') || !email.includes('.com')){
+            alert('Por favor, Ingrese un correo valido.');
+            return false;
+        }
+        alert('Formulario enviado correctamente');
+        document.getElementById('miFormulario').reset();
+    }
+}
+
+
+</script>

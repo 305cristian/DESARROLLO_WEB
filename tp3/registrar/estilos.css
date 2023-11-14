@@ -1,0 +1,47 @@
+h2 {
+  color: #333;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+}
+
+button {
+  padding: 10px;
+  background-color: #4caf50;
+}
+.container-fluid {
+  width: 20%;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 3%;
+  border: 1px solid #333;
+}
+.btn {
+  background-color: blue;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: rgb(92, 92, 158);
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+.error {
+  color: red;
+}
