@@ -1,4 +1,5 @@
 <?php
+  session_start();
 include '../data_base/conection.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -15,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $users[] = $row;
         }
 
-        session_start();
+      
        
         if(password_verify($clave, $users[0]['clave'])){
             $_SESSION['usuario'] = $users[0]['nombres'];

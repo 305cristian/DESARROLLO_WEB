@@ -1,3 +1,6 @@
+<?php
+include 'validate.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -54,9 +57,7 @@
 
     </style>
 </head>
-<?php
-include 'validate.php';
-?>
+
 <body>
         <section>
             <h2>Formulario de registro</h2>

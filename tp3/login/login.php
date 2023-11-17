@@ -1,3 +1,6 @@
+<?php
+include 'validate.php';
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,9 +49,7 @@
 
     </style>
 </head>
-<?php
-include 'validate.php';
-?>
+
 <body>
         <section>
             <h2>Sistema de login</h2>
