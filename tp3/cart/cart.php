@@ -1,8 +1,8 @@
 <?php
-
+ session_start();
  include ("../data_base/conection.php");
 
-session_start();
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['producto_id'])) {
     $producto_id = $_POST['producto_id'];
