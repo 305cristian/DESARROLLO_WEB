@@ -94,14 +94,14 @@ document.getElementById("form").addEventListener('submit', function(e) {
         })
         .then(response => response.text())
         .then(data => {
-            if(data== 'success'){
+            if(data.trim()== 'success'){
                 document.getElementById('nombre').value='';
                 document.getElementById('apellido').value='';
                 document.getElementById('email').value='';
                 document.getElementById('cedula').value='';
                 document.getElementById('id_al').value='';
             alert('Alumno registrado');
-            }else if(data == 'suc_edit'){
+            }else if(data.trim() == 'suc_edit'){
                 document.getElementById('nombre').value='';
                 document.getElementById('apellido').value='';
                 document.getElementById('email').value='';
@@ -131,7 +131,7 @@ document.getElementById("form").addEventListener('submit', function(e) {
         })
     .then(response => response.text())
         .then(data => {
-            if(data== 'success'){
+            if(data.trim()== 'success'){
            
             alert('Alumno eliminado exitosamente');
             }else{
@@ -219,7 +219,7 @@ document.getElementById("formu").addEventListener('submit', function(e) {
         })
         .then(response => response.text())
         .then(data => {
-            if(data== 'success'){   
+            if(data.trim()== 'success'){   
                  alert('Nota asignada exitosamente');
                  document.getElementById('nota').value="";
             }else{
